@@ -59,10 +59,23 @@ double DoubleEnterNumber(string label){
 // Решить с помощью цикла while или do...while.
 void is_zigzag_sequence(){
     int i = 0;
-    bool is_correct = true;
-    while (i < 5){
-        int n1 = IntEnterNumber("");
-        int n2 = IntEnterNumber("");
+    int k = 0;
+    int n1 = IntEnterNumber("Введите целое число: ");
+    while (i < 2 && i > -2 && k < 9){
+        int n2 = IntEnterNumber("Введите целое число: ");
+        if(n1 > n2){
+            i--;
+        }else{
+            i++;
+        }
+        n1 = n2;
+        k++;
+    }
+    cout << "Результат задания 1:\n";
+    if (k == 9){
+        cout << "Последовательность является \"зигзагообразной\".";
+    }else{
+        cout << "Последовательность не является \"зигзагообразной\".";
     }
 }
 // Задание 2. Вывести все четырехзначные числа, цифры которых образуют арифметическую
