@@ -137,7 +137,7 @@ void table_funcion(){
 // 1/(1 · 2) + 1/(2 · 3) + . . . + 1/(𝑛 · (𝑛 + 1)).
 void sum_line(){
     int n = IntEnterNumber("Введите натуральное число n: ");
-    if (n < 0){
+    if (n < 1){
         n = IntEnterNumber("Введите натуральное число n: ");
     }
     double answer = 0;
@@ -166,7 +166,6 @@ void find_count(){
                 i1 = i1 / 10;
             }
             sum += i1;
-            cout << "Сумма: "<< i << " - " << sum << endl;
             for (int j = 1; j < sum / 2 + 1; j++){
                 if (sum % j == 0){
                     k++;
