@@ -1,3 +1,4 @@
+// Короткова
 #include <iostream>
 #include <string>
 #include <cmath>
@@ -136,7 +137,7 @@ void table_funcion(){
 // 1/(1 · 2) + 1/(2 · 3) + . . . + 1/(𝑛 · (𝑛 + 1)).
 void sum_line(){
     int n = IntEnterNumber("Введите натуральное число n: ");
-    if (n < 1){
+    if (n < 0){
         n = IntEnterNumber("Введите натуральное число n: ");
     }
     double answer = 0;
@@ -150,22 +151,31 @@ void sum_line(){
 // Задание 5. Найти количество натуральных чисел, меньших n, у которых сумма цифр является простым числом.
 void find_count(){
     int n = IntEnterNumber("Введите натуральное число: ");
-    if (n < 1){
+    if (n < 0){
         n = IntEnterNumber("Введите натуральное число: ");
     }else if (n == 1 || n == 2){
         cout << "Результат задания 5:\nКоличество натуральных чисел, меньших "<< n << ": " << 0 << ".\n";
     }else{
         int count = 0;
-        for (int i = 1; i < n; i++){
+        for (int i = 2; i < n; i++){
+            int i1 = i;
             int k = 0;
-            for (int j = 1; j < i / 2 + 1; j++){
-                if (i % j == 0){
+            int sum = 0;
+            while (i1 > 9){
+                sum += i1 % 10;
+                i1 = i1 / 10;
+            }
+            sum += i1;
+            cout << "Сумма: "<< i << " - " << sum << endl;
+            for (int j = 1; j < sum / 2 + 1; j++){
+                if (sum % j == 0){
                     k++;
                 }
             }
             if (k == 1){
                 count++;
             }
+            
         }
         cout << "Результат задания 5:\nКоличество натуральных чисел, меньших "<< n << ": " << count << ".\n";
     }
