@@ -59,21 +59,23 @@ double DoubleEnterNumber(string label){
 // «зигзагообразной» (элементы поочередно то строго больше, то строго меньше предыдущего).
 // Решить с помощью цикла while или do...while.
 void is_zigzag_sequence(){
-    int i = 0;
-    int k = 0;
+    int i = 1;
+    bool is_zigzag = true;
     int n1 = IntEnterNumber("Введите целое число: ");
-    while (i < 2 && i > -2 && k < 9){
-        int n2 = IntEnterNumber("Введите целое число: ");
-        if(n1 > n2){
-            i--;
-        }else{
-            i++;
+    int n2 = IntEnterNumber("Введите целое число: ");
+    while (i < 9){
+        int n3 = IntEnterNumber("Введите целое число: ");
+        if (!((n2 > n1 && n2 > n3) || (n2 < n1 && n2 < n3))){
+            is_zigzag = false;
         }
+
         n1 = n2;
-        k++;
+        n2 = n3;
+        i++;
     }
+
     cout << "Результат задания 1:\n";
-    if (k == 9){
+    if (is_zigzag){
         cout << "Последовательность является \"зигзагообразной\".\n";
     }else{
         cout << "Последовательность не является \"зигзагообразной\".\n";
