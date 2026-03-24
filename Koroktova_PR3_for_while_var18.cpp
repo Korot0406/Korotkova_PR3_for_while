@@ -106,30 +106,31 @@ void table_funcion(){
     double x2 = DoubleEnterNumber("Введите  x2: ");
     double x0 = DoubleEnterNumber("Введите шаг: ");
     cout << x0 << endl;
-    cout << "Результат задания 3:\nx   y\n";
+    cout << "Результат задания 3:\n" << "      x        |        y        \n";
+    cout << "--------------------------------\n";
     if (x1 == x2){
          double y = sqrt(abs(x1 - 1)) + sqrt(abs(x1 + 1));
-        cout << x1 << "   " << y << "\n";
+        printf("%10.4f     | %10.4f\n", x1, y);
     }
     if (x1 < x2 && x0 > 0){
         for (double i = x1; i <= x2; i += x0){
             double y = sqrt(abs(i - 1)) + sqrt(abs(i + 1));
-            cout << i << "   " << y << "\n";
+            printf("%10.4f     | %10.4f\n", i, y);
         }
     }else if (x1 > x2 && x0 > 0){
         for (double i = x2; i <= x1; i += x0){
             double y = sqrt(abs(i - 1)) + sqrt(abs(i + 1));
-            cout << i << "   " << y << "\n";
+            printf("%10.4f     | %10.4f\n", i, y);
         }
     }else if (x1 < x2 && x0 < 0){
         for (double i = x2; i >= x1; i += x0){
             double y = sqrt(abs(i - 1)) + sqrt(abs(i + 1));
-            cout << i << "   " << y << "\n";
+            printf("%10.4f     | %10.4f\n", i, y);
         }
     }else if (x1 > x2 && x0 > 0){
         for (double i = x2; i <= x1; i += x0){
             double y = sqrt(abs(i - 1)) + sqrt(abs(i + 1));
-            cout << i << "   " << y << "\n";
+            printf("%10.4f     | %10.4f\n", i, y);
         }
     }
 }
